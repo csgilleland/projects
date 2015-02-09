@@ -1,0 +1,8 @@
+<h2><%= @order.name %></h2>
+
+<a href="/orders/<%= @order.id %>/edit">edit</a>
+
+<form action="/orders/<%= @order.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete order">
+</form>
