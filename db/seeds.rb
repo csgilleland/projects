@@ -9,9 +9,7 @@ end
 
 ActiveRecord::Base.establish_connection(
 adapter: :postgresql,
-database: :restaurant,
-host: :localhost,
-port: 3000
+database: :restaurant
 )
 
 # create some food

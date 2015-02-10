@@ -4,10 +4,16 @@
   <% @foods.each do |food| %>
   <li>
     <a href="/foods/<%= food.id %>">
-      <%= food.name %>
+      <%= food.name %> £<%= food.price %>
     </a>
   </li>
   <% end %>
 </ul>
 
-<a href="/foods/new">Add a new item to the menu</a>
+<div class='new-button'>
+<ul>
+  <li>
+    <a href="/foods/new">NEW</a>
+  </li>
+</ul>
+</div>

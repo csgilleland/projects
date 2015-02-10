@@ -1,5 +1,13 @@
-<form action="/foods" method="post">
-  <input type="text" name="food_name">
-  <input type="submit">
+<h2>Add a new Party</h2>
 
+<form action="/parties" method="post">
+  <label for="table_number">Table Number</label>
+  <select name="party[table_number]">
+    <% @available.each do |avail| %>
+    <option id="table_number" type="number" value="<%= avail %>"><%= avail %> </option>
+    <% end %>
+  </select>
+  <label for="guests">How many guests?</label>
+  <input id="guests" type="integer" name='party[guests]' <% if @party %><value="<%= @party.guests %>"><% end %><br>
+  <input type="submit">
 </form>

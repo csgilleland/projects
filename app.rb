@@ -49,7 +49,7 @@ end
   patch '/foods/:id' do
     food = Food.find(params[:id])
     food.update(params[:food])
-    redirect to '/foods/#{food.id}'
+    redirect to "/foods/#{food.id}"
   end
 
   delete '/foods/:id' do
@@ -65,6 +65,7 @@ end
 
   get '/parties/new' do
     @parties = Party.all
+    @available = Party.open_tables
     erb :'parties/new'
   end
 
@@ -75,11 +76,12 @@ end
 
   post '/parties' do
     party = Party.create(params[:party])
-    redirect to 'parties/#{party.id}'
+    redirect to '/parties'
   end
 
   get '/parties/:id/edit' do
     @party = Party.find(params[:id])
+    @foods = Food.all
     erb :'parties/edit'
   end
 
@@ -99,6 +101,21 @@ end
   get '/orders' do
     @orders = Order.all
     erb :'orders/index'
+  end
+
+
+  post '/parties/:party_id/order' do
+    @order = Order.create(params[:order])
+    @order.party_id = :party_id
+    erb :'parties/edit'
+
+  end
+
+  patch '/parties/:party_id/order' do
+    party = Party.find(params[:party_id])
+    party.update(params[:party])
+
+    redirect to "/parties/#{party.id}"
   end
 
   # patch '/parties/:id/checkout' do

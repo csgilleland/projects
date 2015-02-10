@@ -1,5 +1,17 @@
-<form action="/parties/<%= @party.id %>" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <input type="text" name="party_name" value="<%= @party.name %>">
+<h2>Ordering for Party <%= @party.id %>, at table <%= @party.table_number%></h2>
+
+<form action="/parties/<%= @party.id %>/order" method="POST" placeholder="Add Food">
+  <select name="party[food]">
+    <% @foods.each do |food| %>
+    <option id="party[food]" type="number" value="<%= food.id %>"><%= food.name %> </option>
+    <% end %>
+  </select>
+  <input type="hidden" name="_method" value="PATCH">
   <input type="submit">
 </form>
+
+<br />
+<br />
+<br />
+
+<a href="/parties">Cancel</a>

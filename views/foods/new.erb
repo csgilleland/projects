@@ -1,5 +1,6 @@
-<form action="/foods" method="post">
-  <input type="text" name="food_name">
-  <input type="submit">
+<h2>Fill out the info below to add a new item to the Menu</h2>
 
+<form action="/foods" method="post">
+  <%= erb :"/foods/_form" %>
+  <input type="submit">
 </form>

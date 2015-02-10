@@ -1,0 +1,18 @@
+  <label for="name"></label>
+  <input id="name" type="text" placeholder='name' name='food[name]' <% if @food %><value="<%= @food.name %>"><% end %>
+  <br>
+  <br>
+
+  <label for="cuisine"></label>
+  <input id="cuisine" type="text" placeholder='cuisine' name='food[cuisine]'<% if @food %> value="<%= @food.cuisine %>"><% end %>
+  <br>
+  <br>
+
+  <label for="price"></label>
+  <input id="price" type="integer" placeholder='price' name='food[price]'<% if @food %> value="<%= @food.price %>"><% end %>
+  <br>
+  <br>
+
+  <label for="allergens"></label>
+  <input id="allergens" type="text" placeholder='allergens' name='food[allergens]'<% if @food %> value="<%= @food.allergens %>"><% end %>
+  <br>

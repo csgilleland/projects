@@ -9,5 +9,6 @@ gem 'sinatra-contrib', require: 'sinatra/contrib/all'
 gem 'pg'
 
 # Gems necessary for development
-gem 'pry', group: :development
+gem 'pry'
 gem 'activerecord', :require => "active_record"
+gem 'unicorn'
